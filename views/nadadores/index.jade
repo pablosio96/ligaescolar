@@ -1,0 +1,35 @@
+extends ../layout.jade
+block content
+  br
+  form(action="/actualizar_marcas")
+    input(type="submit" class="btn btn-primary pull-right" style="margin-right: 20px" value="Actualizar marcas" href="/")
+  form(action="/excel")
+    input(type="submit" class="btn btn-primary pull-right" style="margin-right: 20px" value="Importar" href="/")
+  form(action="/ins_nadador")
+    input(type="submit" class="btn btn-primary pull-right" style="margin-right: 20px" value="Nuevo" href="/")
+  h1(class="col-md-4 col-md-offset-4 text-center  azul-oscuro")= title
+
+  table(class="table table-striped text-center")
+    thead
+      tr
+        th Club
+        th Nombre
+        th Sexo
+        th Año Nacimiento
+        th Dorsal
+        th Mejor Marca
+        th Editar
+    tbody
+      - each nadador in nadadores
+        tr
+          td= nadador.id_club
+          td= nadador.id_nadador
+          td= nadador.sexo
+          td= nadador.anho_nacimiento
+          td= nadador.dorsal
+          td= nadador.mejor_marca
+          td
+            form(method="POST" action="/editar_nadador")
+              input(hidden type="checkbox" name="nadador" value=nadador.id_nadador checked)= nadador.id_nadador
+              input(hidden type ="checkbox" name="dorsal" value=nadador.dorsal checked)= nadador.dorsal
+              input(type="submit" class="btn btn-default pull-right"  value="Editar" href="/")

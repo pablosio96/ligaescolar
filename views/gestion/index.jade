@@ -1,0 +1,23 @@
+extends ../layout.jade
+block content
+  div(class="col-md-4 col-md-offset-4")
+    h1(class="azul-oscuro")= title 
+    form(method="POST" action="/gestion" enctype="urlencoded")
+      input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+      input(hidden type="checkbox" name="prueba" value=prueba checked)= prueba
+      div(class="form-group funkyradio")
+        div(class="funkyradio-success")
+          input(type="radio" name="opcion" value= "informe" id= "informe")
+          label(for= "informe") Informes
+          br
+        if !tiempo
+          div(class="funkyradio-success")
+            input(type="radio" name="opcion" value= "tiempos" id= "tiempos")
+            label(for= "tiempos") Insertar tiempos manuales
+            br
+        if !disputada
+          div(class="funkyradio-success")
+            input(type="radio" name="opcion" value= "iniciar" id= "iniciar")
+            label(for= "iniciar") Iniciar
+            br
+        input(type="submit" class="btn btn-primary" value="Aceptar")

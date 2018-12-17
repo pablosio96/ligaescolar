@@ -1,0 +1,27 @@
+extends ../layout.jade
+block content
+    div(class="col-md-4 col-md-offset-4")
+      h1(class="azul-oscuro") Añadir nadador a la jornada
+      form(method="POST" action="/ins_participante" enctype="urlencoded")
+        div(class="form-group")
+          input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+          label Prueba
+          br
+          select(name="prueba" class="form-control")
+            - each prueba in pruebas
+              option(name="id_prueba" value= prueba.id_prueba id=prueba.id_prueba)= prueba.nombre
+          br
+          label Nombre
+          br
+          input(type="text" name="id_nadador" class="form-control" placeholder="Nombre del nadador")
+          br
+          label Serie
+          br
+          input(type="text" name="serie" class="form-control" placeholder="Serie")
+          br
+          label Calle
+          br
+          input(type="text" name="calle" class="form-control" placeholder="Calle")
+          br
+          br
+          input(type="submit" class="btn btn-primary" value="Guardar")

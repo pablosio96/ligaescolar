@@ -1,0 +1,17 @@
+extends layout.jade
+block content
+  h1(class="col-md-4 col-md-offset-4 text-center")= categoria
+  h2(class="col-md-4 col-md-offset-4 text-center")= prueba
+  p(class=" col-md-4 col-md-offset-1 ")= title
+  table(class="table table-striped text-center")
+    thead
+      tr
+        th Serie
+        th Nadador
+        th Dorsal
+    tbody
+      - each nadador in nadadores
+        tr
+          td=nadador.serie
+          td= nadador.id_nadador
+          td= nadador.dorsal

@@ -1,0 +1,38 @@
+extends ../layout.jade
+block content
+  div(class="col-md-4 col-md-offset-4")
+    h1(class=" azul-oscuro") Informes
+    form(method="POST" action="/informes" enctype="urlencoded")
+      input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+      input(hidden type="checkbox" name="prueba" value=prueba checked)= prueba
+      div(class="form-group funkyradio")
+          div(class="funkyradio-success")
+            input(type="radio" name="informe" value= "previo" id= "previo")
+            label(for= "previo") Series
+            br
+          div(class="funkyradio-success")
+            input(type="radio" name="informe" value= "club" id= "club")
+            label(for= "club") Clubs-Series
+            br
+            br
+          select(name="chosen_club" class="form-control")
+            - each club in clubs
+              option= club.id_club
+          div(class="funkyradio-success")
+            input(type="radio" name="informe" value= "calle" id= "calle")
+            label(for= "calle") Calles
+            br
+            br
+          select(name="chosen_calle" class="form-control")
+            - var i = 1
+            while i < calles + 1
+              option= i++
+              
+          div(class="funkyradio-success")
+            input(type="radio" name="informe" value= "resultado" id= "resultado")
+            label(for= "resultado") Tiempos
+            br
+          
+
+                      
+        input(type="submit" class="btn btn-primary" value="Aceptar")

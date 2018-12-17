@@ -1,0 +1,16 @@
+extends ../layout.jade
+block content
+  br
+  form(action="/ins_club")
+    input(type="submit" class="btn btn-primary pull-right " style="margin-right: 20px" value="Nuevo" href="/")
+  h1(class="col-md-4 col-md-offset-4 text-center azul-oscuro")= title
+
+  table(class="table table-striped text-center tabla")
+    thead
+      tr
+        th Nombre
+
+    tbody
+      - each club in clubs
+        tr
+          td= club.id_club

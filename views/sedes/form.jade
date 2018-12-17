@@ -1,0 +1,24 @@
+extends ../layout.jade
+block content
+    div(class="col-md-4 col-md-offset-4")
+      h1(class="azul-oscuro") Nueva sede
+      form(method="POST" action="/ins_sede" enctype="urlencoded")
+        div(class="form-group")
+          label Sede
+          br
+          input(type="text" name="nombre" class="form-control" placeholder="Nombre de la sede")
+          br
+          label Piscina
+          br
+          input(type="text" name="piscina" class="form-control" placeholder="Nombre de la piscina")
+          br
+          label Calles
+          br
+          input(type="text" name="calles" class="form-control" placeholder="Número de calles")
+          br
+          label Longitud
+          br
+          input(type="text" name="longitud" class="form-control" placeholder="Longitud de la piscina")
+          br
+          br
+          input(type="submit" class="btn btn-primary" value="Guardar")

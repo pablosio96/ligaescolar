@@ -1,0 +1,19 @@
+extends ../layout.jade
+block content
+    div(class="col-md-4 col-md-offset-4")
+      h1(class="azul-oscuro") Nueva prueba
+      form(method="POST" action="/ins_prueba" enctype="urlencoded")
+        div(class="form-group")
+          input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+          label Nombre
+          br
+          input(type="text" name="nombre" class="form-control" placeholder="Nombre de la prueba")
+          br
+          label Categoria
+          br
+          select(name="categoria" class="form-control")
+              option Promesas
+              option Benjamin
+          br
+          br
+          input(type="submit" class="btn btn-primary" value="Guardar")

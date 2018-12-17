@@ -1,0 +1,26 @@
+extends ../layout.jade
+block content
+  form(method="POST" action="/prueba_nueva")
+    input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+    input(type="submit" class="btn btn-primary pull-right"  style="margin-right: 20px" value="Nueva" href="/") 
+  form(method="POST" action="/anhadir")
+    input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+    input(type="submit" class="btn btn-primary pull-right"  style="margin-right: 20px" value="Añadir participante" href="/")   
+  form(method="POST" action="/reorganizar")
+    input(hidden type="checkbox" name="jornada_reorganizacion" value=jornada checked)= jornada
+    input(type="submit" class="btn btn-primary pull-right"  style="margin-right: 20px" value="Reorganizar" href="/")
+  form(method="POST" action="/editar")
+    input(hidden type="checkbox" name="jornada_edicion" value=jornada checked)= jornada
+    input(type="submit" class="btn btn-primary pull-right"  style="margin-right: 20px" value="Editar" href="/")
+  div(class="col-md-4 col-md-offset-4")
+    h1(class="azul-oscuro")= title 
+    form(method="POST" action="/pruebas" enctype="urlencoded")
+      input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+      div(class="form-group funkyradio")
+        - each prueba in pruebas
+          div(class="funkyradio-success")
+            input(type="radio" name="prueba" value= prueba.id_prueba id=prueba.id_prueba)
+            label(for=prueba.id_prueba)= prueba.nombre
+            br
+        if !empty
+          input(type="submit" class="btn btn-primary" value="Aceptar")

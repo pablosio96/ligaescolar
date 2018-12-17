@@ -1,0 +1,18 @@
+extends ../layout.jade
+block content
+    div(class="col-md-4 col-md-offset-4")
+      h1(class=" azul-oscuro") Archivo a importar
+      form(method="POST" action="/excel" style="margin-top: 1.5em;" enctype="urlencoded")
+        div(class="form-group")
+          label Archivo
+          input(type="file" name="archivo" placeholder="Introduzca el excel")
+          br
+          label Temporada
+          br
+          select(name="temporada" class="form-control")
+            - each item in rows
+              option= item.id_temporada
+          br
+          input(type="text" name="nueva_temporada" class="form-control" placeholder="O introduzca una nueva temporada")
+          br
+          input(type="submit" class="btn btn-primary" value="Aceptar")

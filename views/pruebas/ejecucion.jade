@@ -1,0 +1,15 @@
+extends ../layout.jade
+block content
+  h1(class=" azul-oscuro text-center")= title
+  div(class="col-md-7 col-md-offset-3")
+    form(method="POST" action="/tiempos" enctype="urlencoded")
+      input(hidden type="checkbox" name="prueba" value=prueba checked)= prueba
+      input(hidden type="checkbox" name="serie" value=serie checked)= serie
+      br
+      div(class="form-group funkyradio")
+        - each nadador in nadadores
+          p(class="brand")=nadador.id_nadador
+          br    
+          br    
+          br
+      input(type="submit" class="btn btn-primary" value="Iniciar")

@@ -1,0 +1,24 @@
+extends ../layout.jade
+block content
+  br
+  form(action="/ins_sede")
+    input(type="submit" class="btn btn-primary pull-right" style="margin-right: 20px" value="Nueva" href="/")
+  h1(class="col-md-4 col-md-offset-4 text-center azul-oscuro")= title
+
+  table(class="table table-striped text-center")
+    thead
+      tr
+        th #
+        th Nombre
+        th Piscina
+        th Número de calles
+        th Longitud
+
+    tbody
+      - each sede in sedes
+        tr
+          td= sede.id_sede
+          td= sede.nombre
+          td= sede.piscina
+          td= sede.num_calles
+          td= sede.longitud

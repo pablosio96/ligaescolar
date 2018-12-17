@@ -1,0 +1,22 @@
+extends ../layout.jade
+block content
+  div(class="col-md-4 col-md-offset-4")
+    h1(class=" azul-oscuro")= title
+    form(method="POST" action="/reorganizacion" enctype="urlencoded")
+      input(hidden type="checkbox" name="jornada" value=jornada checked)= jornada
+      div(class="form-group funkyradio")
+        - each prueba in pruebas
+          div(class="funkyradio-success")
+            input(hidden type="checkbox" name="pruebas" value=prueba.id_prueba id=prueba.id_prueba checked)
+        - each prueba in pruebas
+          div(class="funkyradio-success")
+            input(hidden type="checkbox" name="pruebas_aux" value=prueba.id_prueba id=prueba.id_prueba checked)
+        - each prueba in pruebas
+          div(class="funkyradio-success")
+            input(hidden type="checkbox" name="categoria" value=prueba.categoria id=prueba.categoria checked)
+        - each nadador in nadadores
+          div(class="funkyradio-success")
+            input(type="checkbox" name="nadador" value=nadador.id_nadador id=nadador.id_nadador)
+            label(for= nadador.id_nadador)=nadador.dorsal
+            br        
+        input(type="submit" class="btn btn-primary" value="Aceptar")

@@ -1,0 +1,15 @@
+extends ../layout.jade
+block content
+  h1(class=" azul-oscuro text-center")= title
+  div(class="col-md-4 col-md-offset-4")
+    form(method="POST" action="/tiempos_manuales" enctype="urlencoded")
+      input(hidden type="checkbox" name="prueba" value=prueba checked)= prueba
+      div(class="form-group ")
+        - each nadador in nadadores
+          p= nadador.id_nadador
+          input(hidden type="checkbox" name="id_tiempo" value=nadador.id_tiempo checked)= nadador.id_tiempo
+          input(type="text" name="tiempo")
+          br        
+          br
+        br  
+        input(type="submit" class="btn btn-primary" value="Aceptar")

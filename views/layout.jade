@@ -1,0 +1,33 @@
+doctype html
+html(lang="es")
+  head
+    title Liga Escolar
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/css/main.css")
+    link(rel="stylesheet" href="css/animate.css")
+    link(link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet")
+  body
+    nav(class="navbar navbar-default navbar-static-top")
+      div(class="container-fluid")
+        div(class="navbar-header")
+          button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse")
+            span(class = "sr-only") Toggle navigation
+            span(class = "glyphicon glyphicon-tint white")
+          a(class="navbar-brand" href="/")
+            img(alt="Brand" src="http://vide.es/images/stories/clubs/27/logo/Logo%20Vigo-Rias%20Baixas%20Redondo.png" width="32" height="32")
+        div(class="navbar-collapse collapse")
+          ul(class="nav navbar-nav navbar-right")
+            li
+              a(href="/jornadas") Jornadas
+            li
+              a(href="/clubs") Clubs
+            li
+              a(href="/nadadores") Nadadores
+            li
+              a(href="/sedes") Sedes
+            li
+              a(href="/clasificacion") Clasificacion
+
+    block content
+    

@@ -1,0 +1,44 @@
+extends ../layout.jade
+block content
+    div(class="col-md-4 col-md-offset-4")
+      h1(class="azul-oscuro") Nuevo nadador
+      form(method="POST" action="/ins_nadador" style="margin-top: 1.5em;" enctype="urlencoded")
+        div(class="form-group")
+          label Club
+          br
+          select(name="id_club" class="form-control")
+            - each club in clubs
+              option= club.id_club
+          br
+          label Nombre
+          br
+          input(type="text" name="id_nadador" class="form-control" placeholder="Nombre del nadador")
+          br
+          label Sexo
+          br
+          select(name="sexo" class="form-control")  
+              option  Masculino
+              option  Femenino
+          br
+          label Año de Nacimiento
+          br
+          input(type="text" name="anho_nacimiento" class="form-control" placeholder="Año de nacimiento")
+          br
+          label Dorsal
+          br
+          input(type="text" name="dorsal" class="form-control" placeholder="Dorsal del nadador")
+          br
+          label Marca
+          br
+          input(type="text" name="marca" class="form-control" placeholder="Mejor marca del nadador")
+          br
+          label Temporada
+          br
+          select(name="temporada" class="form-control")
+            - each temporada in temporadas
+              option= temporada.id_temporada
+          br
+          input(type="text" name="nueva_temporada" class="form-control" placeholder="o introduzca una nueva temporada")
+          br
+          br
+          input(type="submit" class="btn btn-primary" value="Guardar")
